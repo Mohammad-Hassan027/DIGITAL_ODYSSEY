@@ -66,20 +66,20 @@ body {
 }
 
 .section-nav-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.4);
+  width: 8px;
+  height: 8px;
+  border-radius: 0; /* Square nav dots */
+  border: 1px solid rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s steps(2);
   background: transparent;
 }
 
 .section-nav-dot.active {
-  background: #fff;
-  border-color: #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
-  transform: scale(1.4);
+  background: var(--color-spark);
+  border-color: var(--color-spark);
+  box-shadow: 4px 4px 0px rgba(0, 255, 65, 0.3);
+  transform: scale(1.2);
 }
 
 /* ─── SECTION BASE ─── */
@@ -114,33 +114,35 @@ body {
 }
 
 .terminal-window {
-  background: rgba(0, 20, 5, 0.9);
-  border: 1px solid var(--color-spark);
-  border-radius: 6px;
-  box-shadow: 0 0 40px rgba(0, 255, 65, 0.3), inset 0 0 40px rgba(0, 255, 65, 0.03);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 10, 4, 0.98);
+  border: 2px solid var(--color-spark);
+  border-radius: 0;
+  box-shadow: 6px 6px 0px rgba(0, 255, 65, 0.2);
 }
 
 .terminal-titlebar {
-  background: rgba(0,255,65,0.1);
-  border-bottom: 1px solid var(--color-spark);
-  padding: 8px 14px;
+  background: #00ff41;
+  color: #000;
+  border-bottom: 2px solid #00ff41;
+  padding: 6px 14px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  font-weight: 900;
 }
 
 .terminal-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 0;
 }
 
 .terminal-body {
-  padding: 20px 24px;
+  padding: 24px;
   color: var(--color-spark);
-  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-  line-height: 1.8;
+  font-size: clamp(0.7rem, 1.5vw, 0.88rem);
+  line-height: 1.6;
 }
 
 .terminal-line {
@@ -345,16 +347,16 @@ body {
 
 .social-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(24,119,242,0.1);
+  border-radius: 0;
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+  padding: 24px;
+  transition: all 0.2s steps(2);
+  border: 2px solid #000;
 }
 
 .social-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(24,119,242,0.2);
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px rgba(24,119,242,0.3);
 }
 
 .like-btn {
@@ -431,18 +433,18 @@ body {
 }
 
 .mobile-stat-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(108,99,255,0.3);
-  border-radius: 16px;
-  padding: 20px;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #6c63ff;
+  border-radius: 0;
+  padding: 24px;
+  transition: all 0.2s steps(2);
+  box-shadow: 8px 8px 0px rgba(108,99,255,0.2);
 }
 
 .mobile-stat-card:hover {
   background: rgba(108,99,255,0.1);
-  border-color: rgba(108,99,255,0.6);
-  transform: translateY(-4px);
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px rgba(108,99,255,0.4);
 }
 
 /* ─── ERA 5: THE FUTURE ─── */
@@ -451,19 +453,18 @@ body {
 }
 
 .glass-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(167,139,250,0.2);
-  border-radius: 20px;
-  padding: 28px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
-  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #a78bfa;
+  border-radius: 0;
+  padding: 24px;
+  box-shadow: 8px 8px 0px rgba(167,139,250,0.2);
+  transition: all 0.2s steps(2);
 }
 
 .glass-card:hover {
-  border-color: rgba(167,139,250,0.5);
-  box-shadow: 0 16px 48px rgba(167,139,250,0.15), inset 0 1px 0 rgba(255,255,255,0.15);
-  transform: translateY(-6px);
+  border-color: #c4b5fd;
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px rgba(167,139,250,0.4);
 }
 
 .node-network {
@@ -724,10 +725,11 @@ body {
   letter-spacing: 0.15em;
   padding: 3px 8px;
   border: 1px solid;
-  border-radius: 2px;
+  border-radius: 0;
   flex-shrink: 0;
   margin-top: 2px;
   font-weight: 700;
+  background: rgba(255,255,255,0.05);
 }
 
 .tl-fact-text {
@@ -749,9 +751,8 @@ body {
   gap: 2px;
   padding: 10px 16px;
   border: 1px solid;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(8px);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .tl-stat-val {
@@ -774,20 +775,20 @@ body {
   justify-content: center;
 }
 
-/* Era visual frame */
+/* Era visual frame (Sharpened) */
 .era-visual-wrap {
   position: relative;
   width: 100%;
   max-width: 440px;
   height: clamp(260px, 40vh, 380px);
-  border: 1px solid;
-  border-radius: 12px;
+  border: 2px solid;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px;
   overflow: hidden;
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Corner brackets */
@@ -1400,8 +1401,7 @@ body {
   background-image: radial-gradient(ellipse 70% 60% at 50% 50%, #001a06 0%, #000 100%);
 }
 
-/* ── Full-screen scanline overlay ─────────────────────────── */
-/*    CSS steps() for the authentic interlaced scanline look   */
+/* ── Full-screen scanline overlay (Grittier) ──────────────── */
 .scanlines {
   position: absolute;
   inset: 0;
@@ -1410,29 +1410,36 @@ body {
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
-    transparent 3px,
-    rgba(0, 0, 0, 0.18) 3px,
-    rgba(0, 0, 0, 0.18) 4px
+    transparent 1px,
+    rgba(0, 0, 0, 0.25) 1px,
+    rgba(0, 0, 0, 0.25) 2px
   );
-  /* Moving scanline band that slowly drifts downward */
-  animation: scanline-drift 8s linear infinite;
+  animation: scanline-drift 1s steps(20) infinite; /* Choppier movement */
 }
 
-@keyframes scanline-drift {
-  0%   { background-position: 0 0; }
-  100% { background-position: 0 200px; }
+/* ── Phosphor Noise Overlay (Intentional Imperfection) ────── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 31;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.03), transparent 80%),
+    repeating-radial-gradient(#00ff41 0 0.0001%, transparent 0 0.0002%) 50% 50% / 250px 250px;
+  opacity: 0.08;
+  mix-blend-mode: screen;
 }
 
-/* ── Vignette ─────────────────────────────────────────────── */
+/* ── Vignette (Heavy CRT Curve) ───────────────────────────── */
 .crt-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 29;
+  z-index: 32;
   background: radial-gradient(
-    ellipse 110% 110% at 50% 50%,
-    transparent 55%,
-    rgba(0, 0, 0, 0.65) 100%
+    ellipse 100% 100% at 50% 50%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 
@@ -1508,23 +1515,19 @@ body {
 }
 
 /* ── CRT screen card ──────────────────────────────────────── */
+/* ── CRT screen card (Brutalist) ───────────────────────────── */
 .hero-crt-screen {
   position: relative;
   z-index: 20;
   width: min(860px, 94vw);
   max-height: 88vh;
-  background: rgba(0, 14, 4, 0.96);
-  border: 1px solid #00ff41;
-  border-radius: 8px;
-  box-shadow:
-    0 0 0 1px #003b10,
-    0 0 30px rgba(0, 255, 65, 0.35),
-    0 0 80px rgba(0, 255, 65, 0.12),
-    inset 0 0 60px rgba(0, 255, 65, 0.04);
+  background: #000;
+  border: 2px solid #00ff41;
+  border-radius: 0;
+  box-shadow: 12px 12px 0px rgba(0, 255, 65, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* Subtle CRT phosphor curvature via border-radius blend */
 }
 
 /* ── Title bar ────────────────────────────────────────────── */
@@ -1892,99 +1895,46 @@ body {
   text-shadow: none;
 }
 /* ── HoloButton Cinematic Styles ────────────────────────── */
+/* ── Brutalist Button Styles (No Gloss) ─────────────────── */
 .holo-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  background: rgba(0, 255, 65, 0.05); /* Semi-transparent cyan/green */
-  border: 1px solid rgba(0, 255, 65, 0.4);
+  padding: 12px 24px;
+  background: #000;
+  border: 2px solid #00ff41; /* High contrast hard border */
   color: #00ff41;
   font-family: var(--font-mono);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+  transition: all 0.1s steps(2); /* Instantaneous switch feel */
+  box-shadow: 4px 4px 0px rgba(0, 255, 65, 0.3); /* Offset shadow, no blur */
   outline: none;
-  perspective: 1000px; /* For 3D tilt */
 }
 
-/* Subtle border pulse */
-@keyframes holo-pulse {
-  0%, 100% { border-color: rgba(0, 255, 65, 0.4); box-shadow: 0 0 15px rgba(0, 255, 65, 0.1); }
-  50% { border-color: rgba(0, 255, 65, 0.7); box-shadow: 0 0 25px rgba(0, 255, 65, 0.2); }
-}
-.holo-btn:not(:hover) {
-  animation: holo-pulse 2.5s infinite ease-in-out;
+.holo-btn:hover {
+  background: #00ff41;
+  color: #000;
+  box-shadow: 6px 6px 0px rgba(0, 255, 65, 0.5);
 }
 
-/* Vertical Scanline */
-.holo-scanline {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.3), transparent);
-  pointer-events: none;
-  z-index: 2;
-}
-.holo-btn:hover .holo-scanline {
-  animation: scanline-move 1.5s linear infinite;
-}
-@keyframes scanline-move {
-  0% { top: -100%; }
-  100% { top: 200%; }
+.holo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(0, 255, 65, 0.8);
 }
 
-/* Chromatic Aberration Text Effect */
+/* Kill complex scanlines inside buttons */
+.holo-scanline, .holo-overlay {
+  display: none !important;
+}
+
 .holo-text {
   position: relative;
   z-index: 3;
-  transition: text-shadow 0.3s ease;
-}
-.holo-btn:hover .holo-text {
-  text-shadow: 2px 0 #ff003c, -2px 0 #00c8ff;
-  color: #fff;
-}
-
-/* Click Ripple Visualization */
-.holo-ripple {
-  position: absolute;
-  border: 2px solid #00ff41;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-  animation: holo-ripple-anim 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-@keyframes holo-ripple-anim {
-  0% { width: 0; height: 0; opacity: 1; border-width: 4px; }
-  100% { width: 400px; height: 400px; opacity: 0; border-width: 1px; }
-}
-
-/* Holographic Overlay */
-.holo-overlay {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 65, 0.03) 3px, transparent 4px);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-.holo-btn:hover .holo-overlay {
-  opacity: 1;
-}
-
-/* Active State */
-.holo-btn:active {
-  background: rgba(0, 255, 65, 0.2);
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 65, 0.6);
-  transform: scale(0.96) translateZ(0); /* Press effect */
 }
 
 /* ── Active Data Stream (Loader) ────────────────────────── */

@@ -504,16 +504,30 @@ export default function TimelineScroll({ onActiveEra }) {
         {/* Era labels below track */}
         <div className="tl-progress-labels">
           {ERAS.map((era, i) => (
-            <span
+            <button
               key={era.id}
+              onClick={() => {
+                const totalScroll = triggerRef.current.offsetHeight;
+                const sectionTop = triggerRef.current.offsetTop;
+                // Since n cards are shown over 100% of the pinned duration, 
+                // Card i is at approximately (i/n) * totalScroll
+                window.scrollTo({
+                  top: sectionTop + (i / ERAS.length) * totalScroll + 10,
+                  behavior: 'smooth'
+                });
+              }}
               className={`tl-progress-era-label ${i === activeIdx ? 'tl-progress-era-label--active' : ''}`}
               style={{
                 left: `${(i / (ERAS.length - 1)) * 100}%`,
                 color: i === activeIdx ? era.accent : 'rgba(255,255,255,0.25)',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
               }}
+              aria-label={`Jump to era ${era.num}`}
             >
               {era.num}
-            </span>
+            </button>
           ))}
         </div>
       </div>

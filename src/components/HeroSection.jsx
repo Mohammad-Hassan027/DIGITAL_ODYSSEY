@@ -150,11 +150,7 @@ export default function HeroSection({ onReady }) {
       className="hero-section"
       aria-label="Hero: Digital Odyssey terminal intro"
     >
-      {/* ── Scanline overlay ─────────────────────────────── */}
-      <div className="scanlines" aria-hidden="true" />
-
-      {/* ── Vignette ─────────────────────────────────────── */}
-      <div className="crt-vignette" aria-hidden="true" />
+      {/* Global overlays are now in App.jsx (scanlines, vignette, noise) */}
 
       {/* ── Glitch layer ─────────────────────────────────── */}
       <div
@@ -166,14 +162,13 @@ export default function HeroSection({ onReady }) {
       {/* ── CRT screen ───────────────────────────────────── */}
       <div ref={screenRef} className="hero-crt-screen">
 
-        {/* Title bar */}
         <div className="hero-titlebar">
-          <div className="flex gap-2">
-            <span className="tb-dot" style={{ background: '#ff5f57' }} />
-            <span className="tb-dot" style={{ background: '#ffbd2e' }} />
-            <span className="tb-dot" style={{ background: '#28c840' }} />
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 bg-[#444]" />
+            <span className="w-2.5 h-2.5 bg-[#444]" />
+            <span className="w-2.5 h-2.5 bg-[#444]" />
           </div>
-          <span className="hero-titlebar-label">digital-odyssey — bash — 80×24</span>
+          <span className="hero-titlebar-label text-[10px] tracking-widest font-bold">DIGITAL_ODYSSEY.EXE</span>
           <span className="hero-uptime">UPTIME: 56Y 2M 27D</span>
         </div>
 

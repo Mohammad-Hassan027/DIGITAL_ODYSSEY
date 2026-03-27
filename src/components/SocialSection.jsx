@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 const POSTS = [
   {
     id: 'post-1',
-    avatar: '👨‍💻',
+    icon: 'spark-icon',
     name: 'Mark Z.',
     handle: '@zuck2004',
     time: '2004',
@@ -20,7 +20,7 @@ const POSTS = [
   },
   {
     id: 'post-2',
-    avatar: '🐦',
+    icon: 'discord-icon',
     name: 'Jack D.',
     handle: '@jack2006',
     time: '2006',
@@ -32,7 +32,7 @@ const POSTS = [
   },
   {
     id: 'post-3',
-    avatar: '📸',
+    icon: 'social-icon',
     name: 'Kevin S.',
     handle: '@instagramCEO',
     time: '2010',
@@ -194,10 +194,12 @@ export default function SocialSection({ sectionRef }) {
               {/* Header */}
               <div className="flex items-center gap-3 mb-3">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-xl"
-                  style={{ background: `${post.color}20`, border: `2px solid ${post.color}40` }}
+                  className="w-10 h-10 rounded-none flex items-center justify-center"
+                  style={{ background: `${post.color}15`, border: `2px solid ${post.color}` }}
                 >
-                  {post.avatar}
+                  <svg className="w-5 h-5" style={{ color: post.color }}>
+                    <use href={`/icons.svg#${post.icon}`} />
+                  </svg>
                 </div>
                 <div>
                   <div className="font-bold text-sm text-[#1c1e21]">{post.name}</div>

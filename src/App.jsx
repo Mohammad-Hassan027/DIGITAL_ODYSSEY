@@ -88,48 +88,53 @@ export default function App() {
       {!loading && (
         <>
           <StarField />
+          <div className="noise-overlay" />
+          <div className="scanlines" />
+          <div className="crt-vignette" />
+          
           <MobileEraNav />
           <SectionNav activeSection={activeSection} />
 
-          {/* ── Fixed header ───────────────────────────────── */}
+          {/* ── Brutalist Header ────────────────────────────── */}
           <header
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-5"
             style={{
-              background: 'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, transparent 100%)',
-              backdropFilter: 'blur(10px)',
+              background: 'rgba(5, 5, 5, 0.85)',
+              borderBottom: '1px solid rgba(0, 255, 65, 0.3)',
+              backdropFilter: 'blur(12px)',
             }}
           >
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-full border-2 border-[#00ff41] flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-[#00ff41] animate-ping" />
+            <div className="flex items-center gap-4">
+              <div className="w-5 h-5 rounded-none border-2 border-[#00ff41] flex items-center justify-center bg-black">
+                <div className="w-1.5 h-1.5 bg-[#00ff41]" />
               </div>
-              <span className="font-['Share_Tech_Mono'] text-[#00ff41] text-xs md:text-sm tracking-widest uppercase">
-                The Digital Odyssey
+              <span className="font-['Share_Tech_Mono'] text-[#00ff41] text-xs md:text-sm tracking-[0.3em] font-bold uppercase">
+                Digital_Odyssey
               </span>
             </div>
 
             {/* Nav */}
-            <nav className="hidden md:flex items-center gap-5" aria-label="Primary navigation">
+            <nav className="hidden md:flex items-center gap-7" aria-label="Primary navigation">
               {ALL_NAV_IDS.map(id => (
                 <button
                   key={id}
                   id={`header-nav-${id}`}
                   onClick={() => scrollTo(id)}
-                  className={`text-[10px] font-['Outfit'] font-semibold tracking-widest uppercase transition-all duration-200 ${
+                  className={`text-[10px] font-['Share_Tech_Mono'] font-bold tracking-[0.2em] uppercase transition-all duration-100 ${
                     activeSection === id
-                      ? 'text-white opacity-100'
-                      : 'text-white/35 hover:text-white/65'
+                      ? 'text-[#00ff41] scale-110'
+                      : 'text-white/30 hover:text-white/70'
                   }`}
                   aria-current={activeSection === id ? 'page' : undefined}
                 >
-                  {id === 'hero'   && 'Intro'}
-                  {id === 'portal' && 'Portal'}
-                  {id === 'spark'  && '01 Spark'}
-                  {id === 'boom'   && '02 Boom'}
-                  {id === 'social' && '03 Social'}
-                  {id === 'mobile' && '04 Mobile'}
-                  {id === 'future' && '05 Future'}
+                  {id === 'hero'   ? '0.Intro' : 
+                   id === 'portal' ? 'P.Gateway' : 
+                   id === 'spark'  ? '01.Spark' : 
+                   id === 'boom'   ? '02.Boom' : 
+                   id === 'social' ? '03.Social' : 
+                   id === 'mobile' ? '04.Shift' : 
+                   '05.Future'}
                 </button>
               ))}
             </nav>
